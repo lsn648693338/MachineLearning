@@ -23,19 +23,15 @@ X = np.c_[np.ones((m, 1)), data[:, 0]]
 X = np.reshape(X, (m, 2))
 y = np.reshape(y, (m, 1))
 theta = np.zeros((2, 1))
-'''
-print("m: \n", m)
-print("theta: \n", theta)
-print("X: \n", X)
-print("y: \n", y)
-'''
+
 iterations = 1500
 alpha = 0.01
 
 temp = computeCost.computeCost(X, y, theta)
-print("J: ", temp)
+print("The first J: ", temp)
 
-theta = gradientDescent.gradientDescent(X, y, theta, alpha, iterations)
-
+[theta, J] = gradientDescent.gradientDescent(X, y, theta, alpha, iterations)
 print("Theta found by gradient descent: ")
 print("%f %f \n" % (theta[0], theta[1]))
+print("The sequence of J: \n")
+print(J)
