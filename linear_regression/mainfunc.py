@@ -32,7 +32,8 @@ print("y: \n", y)
 iterations = 1500
 alpha = 0.01
 
-computeCost.computeCost(X, y, theta)
+temp = computeCost.computeCost(X, y, theta)
+print("J: ", temp)
 
 theta = gradientDescent.gradientDescent(X, y, theta, alpha, iterations)
 
