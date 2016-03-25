@@ -1,12 +1,13 @@
 import code
 import pandas as pd
-import matplotlib.pyplot as plt
+import plotData
 
 print("Plotting Data ...\n")
 data = pd.read_csv('../data/ex1data1.txt', names = ["area", "price"])
 print(data.head(5))
-plt.scatter(data["area"], data["price"], color = "red")
-plt.show()
+X = data["area"]
+y = data["price"]
+plotData.plotData(X, y)
 pause = code.InteractiveConsole()
 pause.raw_input(prompt = "Press Enter to continue: ")
 
