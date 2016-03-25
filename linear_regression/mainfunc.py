@@ -1,13 +1,19 @@
 import code
-import pandas as pd
+import numpy as np
 import plotData
 
+# ============================== Load and Plot data ==============================
+
 print("Plotting Data ...\n")
-data = pd.read_csv('../data/ex1data1.txt', names = ["area", "price"])
-print(data.head(5))
-X = data["area"]
-y = data["price"]
+data = np.genfromtxt("../data/ex1data1.txt", delimiter = ",")
+X = data[:,0]
+y = data[:,1]
 plotData.plotData(X, y)
+
 pause = code.InteractiveConsole()
 pause.raw_input(prompt = "Press Enter to continue: ")
+
+# ============================== Gradient descent ================================
+
+print("Running Gradient Descent ...\n")
 
