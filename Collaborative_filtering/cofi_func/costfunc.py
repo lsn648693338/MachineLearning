@@ -4,6 +4,9 @@ def costfunc(params, Y, R, num_users, num_movies, num_features, lambda1):
     J = 0
     X = params[0, 0:num_movies*num_features].reshape(num_movies, num_features)
     Theta = params[0, num_movies*num_features:].reshape(num_users, num_features)
+    print(type(params))
+    print('size of X: \n', X.shape, type(X))
+    print('size of Theta: \n', Theta.shape)
 
     temp = (np.dot(X, Theta.T) - Y) * R
     J = 1/2 * (temp**2).sum() + lambda1/2 * (Theta**2).sum() + lambda1/2 * (X**2).sum()
